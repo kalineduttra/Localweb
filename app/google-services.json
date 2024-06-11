@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "143758050468",
+    "project_id": "fiaplocalwebemail",
+    "storage_bucket": "fiaplocalwebemail.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143758050468:android:0c749befd0b5cc65d61231",
+        "android_client_info": {
+          "package_name": "com.fiap.localweb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGaQRTFtkZ3H7KorngnZbMmrQQrsoWBF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
