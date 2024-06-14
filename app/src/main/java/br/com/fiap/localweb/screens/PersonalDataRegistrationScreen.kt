@@ -29,12 +29,13 @@ import br.com.fiap.localweb.R
 
 @Composable
 fun PersonalDataRegistrationScreen() {
-    Box(modifier = Modifier.fillMaxSize()){
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ){
         Row(
             horizontalArrangement = Arrangement.SpaceAround,
-
         ){
-            Spacer(modifier = Modifier.height(15.dp))
+
             Button(onClick = { /*TODO*/ },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colorResource(id = R.color.white),
@@ -47,15 +48,14 @@ fun PersonalDataRegistrationScreen() {
                 )
             }
         }
-
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(300.dp)
+                .height(700.dp)
                 .width(300.dp)
                 .offset(y = (50).dp)
                 .padding(end = 32.dp, start = 32.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+
         ){
             Text(
                 text="Informações",
@@ -73,6 +73,7 @@ fun PersonalDataRegistrationScreen() {
             Spacer(modifier = Modifier.height(20.dp))
             Text(
                 text = "Nome:",
+                fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Start,
                 modifier = Modifier.fillMaxWidth(),
                 color = colorResource(id = R.color.blue),
@@ -88,7 +89,8 @@ fun PersonalDataRegistrationScreen() {
             )
             Spacer(modifier = Modifier.height(2.dp))
             Text(
-                text = "Data de nascimento",
+                text = "Data de nascimento:",
+                fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Start,
                 modifier = Modifier.fillMaxWidth(),
                 color = colorResource(id = R.color.blue),
@@ -99,27 +101,29 @@ fun PersonalDataRegistrationScreen() {
                 onValueChange = {},
                 modifier = Modifier
                     .fillMaxWidth())
-        }
-        
-        Spacer(modifier = Modifier.height(200.dp))
-        Row(horizontalArrangement = Arrangement.SpaceAround,
-            modifier = Modifier
-                .fillMaxWidth()
-        ){
-            Image(
-                painterResource(id= R.drawable.first),
-                contentDescription = "página atual",
-                modifier = Modifier
-                    .size(width = 20.dp, height = 20.dp)
 
-            )
-            Button(onClick = { /*TODO*/ },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(id = R.color.red)
-                )){
-                Text(
-                    text = "➔")
+            Spacer(modifier = Modifier.height(400.dp))
+            Row(
+                horizontalArrangement = Arrangement.SpaceAround,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ){
+                Image(
+                    painterResource(id= R.drawable.first),
+                    contentDescription = "página atual",
+                    modifier = Modifier
+                        .size(width = 20.dp, height = 20.dp)
+
+                )
+                Button(onClick = { /*TODO*/ },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorResource(id = R.color.red)
+                    )){
+                    Text(
+                        text = "➔")
+                }
             }
         }
     }
+
 }
