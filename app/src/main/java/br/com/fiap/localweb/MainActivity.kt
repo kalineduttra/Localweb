@@ -1,5 +1,6 @@
 package br.com.fiap.localweb
 
+import PersonalDataRegistrationScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -50,5 +51,13 @@ fun SecondWalkthroughScreenPreview() {
 fun LoginScreenPreview() {
     LocalwebTheme {
         LoginScreen()
+    }
+}
+
+@Preview(showSystemUi=true, showBackground = true)
+@Composable
+fun PersonalDataRegistrationPreview(){
+    LocalwebTheme {
+        PersonalDataRegistrationScreen()
     }
 }

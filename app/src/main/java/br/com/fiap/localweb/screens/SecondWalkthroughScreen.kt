@@ -85,6 +85,7 @@ fun SecondWalkthroughScreen() {
                     )
                 }
 
+                //organizar componentes dentro  da row
                 Spacer(modifier = Modifier.height(200.dp))
                 Row(horizontalArrangement = Arrangement.SpaceAround,
                     modifier = Modifier

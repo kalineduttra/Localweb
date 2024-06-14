@@ -46,7 +46,7 @@ fun WalkthroughScreen() {
         ){
             Image(
                 painterResource(id= R.drawable.walkthrough),
-                contentDescription = "image of a message icon ",
+                contentDescription = "image of a message icon",
                 modifier = Modifier
                     .size(width = 500.dp, height = 700.dp)
             )
@@ -103,9 +103,10 @@ fun WalkthroughScreen() {
                 ){
                     Image(
                         painterResource(id= R.drawable.first),
-                        contentDescription = "back button ",
+                        contentDescription = "página atual",
                         modifier = Modifier
                             .size(width = 20.dp, height = 20.dp)
+
                     )
                     Button(onClick = { /*TODO*/ },
                         colors = ButtonDefaults.buttonColors(
