@@ -113,8 +113,8 @@ fun PersonalDataRegistrationScreen() {
                     contentDescription = "página atual",
                     modifier = Modifier
                         .size(width = 20.dp, height = 20.dp)
-
                 )
+                Spacer(modifier = Modifier)
                 Button(onClick = { /*TODO*/ },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = colorResource(id = R.color.red)

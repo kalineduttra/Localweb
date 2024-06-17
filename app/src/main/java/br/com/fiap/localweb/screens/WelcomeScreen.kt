@@ -31,10 +31,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.localweb.R
 
-
-// segunda tela walkthrough
 @Composable
-fun SecondWalkthroughScreen() {
+fun WelcomeScreen(){
     Box(
         modifier = Modifier.fillMaxSize()
     ){
@@ -46,10 +44,10 @@ fun SecondWalkthroughScreen() {
                 .height(400.dp)
         ){
             Image(
-                painterResource(id= R.drawable.walkthrough2),
-                contentDescription = "image of a message icon ",
+                painterResource(id= R.drawable.welcomeimage),
+                contentDescription = "image of a message icon",
                 modifier = Modifier
-                    .size(width = 500.dp, height = 700.dp)
+                    .size(width = 500.dp, height = 900.dp)
             )
         }
 
@@ -72,21 +70,20 @@ fun SecondWalkthroughScreen() {
                         horizontal = 32.dp
                     )
                 ){
-
                     Text(
-                        text="Simplifique sua Rotina com \nnosso calendario",
-                        textAlign = TextAlign.Center,
+                        text="Bem vindo Eli",
+                        textAlign = TextAlign.Start,
                         modifier = Modifier.fillMaxWidth(),
                         fontWeight = FontWeight.Bold,
-                        color = colorResource(id = R.color.blue),
+                        color = colorResource(id = R.color.black),
                         fontSize = 20.sp
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
-                        text="Conheça o calendário do Locaweb, projetado para\n"+"" +
-                                "organizar sua rotina de maneira eficiente. Gerencie seus\n" +
-                                "compromissos de forma intuitiva e prática, tudo em um\n"+
-                                "só lugar. Simplifique sua agenda com o Locaweb!",
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing\n" +
+                                "elit, sed do eiusmod tempor incididunt ut labore et\n" +
+                                "dolore magna aliqua. Ut enim ad minim veniam, \n" +
+                                "quis nostrud exercitation ullamco",
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         color = colorResource(id = R.color.black),
@@ -94,40 +91,17 @@ fun SecondWalkthroughScreen() {
                     )
                 }
 
-                //organizar componentes dentro  da row
-                Spacer(modifier = Modifier.height(180.dp))
+                Spacer(modifier = Modifier.height(200.dp))
                 Row(horizontalArrangement = Arrangement.SpaceAround,
                     modifier = Modifier
                         .fillMaxWidth()
                 ){
-                    Image(
-                        painterResource(id= R.drawable.second),
-                        contentDescription = "back button ",
-                        modifier = Modifier
-                            .size(width = 20.dp, height = 20.dp)
-                    )
                     Button(onClick = { /*TODO*/ },
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = colorResource(id = R.color.white)
-
-                        )){
-                        Image(
-                            painterResource(id= R.drawable.botaovoltar),
-                            contentDescription = "back button ",
-                            modifier = Modifier
-                                .size(width = 20.dp, height = 20.dp)
-                        )
-                    }
-
-                    Button(
-                        onClick = { /*TODO*/ },
-                        colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.red)
-                        )
-                    ){
+                        )){
                         Text(
-                            text = "Continuar")
-
+                            text = "Vamos começar!")
                     }
                 }
             }

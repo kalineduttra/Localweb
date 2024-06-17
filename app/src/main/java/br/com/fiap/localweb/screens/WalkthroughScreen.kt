@@ -80,15 +80,14 @@ fun WalkthroughScreen() {
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         fontWeight = FontWeight.Bold,
-                        color = colorResource(id = R.color.black),
+                        color = colorResource(id = R.color.blue),
                         fontSize = 20.sp
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing\n" +
-                                "elit, sed do eiusmod tempor incididunt ut labore et\n" +
-                                "dolore magna aliqua. Ut enim ad minim veniam, \n" +
-                                "quis nostrud exercitation ullamco",
+                        text="O app de e-mail que revoluciona sua caixa de entrada!\n" +
+                                "Simplifique a gestão dos seus e-mails com nossa\n" +
+                                "interface intuitiva e funcionalidades avançadas.",
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         color = colorResource(id = R.color.black),
@@ -108,6 +107,7 @@ fun WalkthroughScreen() {
                             .size(width = 20.dp, height = 20.dp)
 
                     )
+                    Spacer(modifier = Modifier)
                     Button(onClick = { /*TODO*/ },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.red)

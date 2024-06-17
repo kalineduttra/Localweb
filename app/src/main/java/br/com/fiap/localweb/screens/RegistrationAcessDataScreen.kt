@@ -19,16 +19,22 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.localweb.R
 
 @Composable
 fun RegistrationAcessDataScreen() {
+    var mandatory = "*"
+
     Box(
         modifier = Modifier.fillMaxSize()
     ){
@@ -120,7 +126,7 @@ fun RegistrationAcessDataScreen() {
                 modifier = Modifier
                     .fillMaxWidth())
 
-            //password requirements
+            // Password requirements
             Spacer(modifier = Modifier.height(30.dp))
             Text(
                 text = "Sua senha deve incluir:",
@@ -131,16 +137,28 @@ fun RegistrationAcessDataScreen() {
                 fontSize = 15.sp
             )
             Text(
-                text="No mínimo 8 caracteres \n" +
-                        "Uma letra maiúscula \n" +
-                        "Um número \n" +
-                        "Um caractere especial \n",
-                color = colorResource(id = R.color.gray),
-                fontSize = 15.sp
+                buildAnnotatedString {
+                    append("No mínimo 8 caracteres                               ")
+                    withStyle(style = SpanStyle(color = Color.Yellow)) {
+                        append("*")
+                    }
+                    append("\nUma letra maiúscula                                    ")
+                    withStyle(style = SpanStyle(color = Color.Yellow)) {
+                        append("*")
+                    }
+                    append("\nUm número                                                   ")
+                    withStyle(style = SpanStyle(color = Color.Yellow)) {
+                        append("*")
+                    }
+                    append("\nUm caractere especial                                 ")
+                    withStyle(style = SpanStyle(color = Color.Yellow)) {
+                        append("*")
+                    }
+                }
             )
 
-            //Termos e condições
-            Spacer(modifier = Modifier.height(10.dp))
+            // Terms and conditions
+            Spacer(modifier = Modifier.height(20.dp))
             Text(
                 text = "Ao clicar em \"Cadastrar\", você concorda com os " +
                         "Termos e Condições, Política de Privacidade e " +
@@ -151,7 +169,8 @@ fun RegistrationAcessDataScreen() {
                 fontSize = 13.sp
             )
 
-            
+
+            // Navigation
             Spacer(modifier = Modifier.height(70.dp))
             Row(
                 horizontalArrangement = Arrangement.SpaceAround,
@@ -164,6 +183,8 @@ fun RegistrationAcessDataScreen() {
                     modifier = Modifier
                         .size(width = 20.dp, height = 20.dp)
                 )
+                // Register
+                Spacer(modifier = Modifier)
                 Button(onClick = { /*TODO*/ },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = colorResource(id = R.color.red)

@@ -14,6 +14,7 @@ import br.com.fiap.localweb.screens.LoginScreen
 import br.com.fiap.localweb.screens.RegistrationAcessDataScreen
 import br.com.fiap.localweb.screens.SecondWalkthroughScreen
 import br.com.fiap.localweb.screens.WalkthroughScreen
+import br.com.fiap.localweb.screens.WelcomeScreen
 import br.com.fiap.localweb.ui.theme.LocalwebTheme
 
 class MainActivity : ComponentActivity() {
@@ -68,5 +69,13 @@ fun PersonalDataRegistrationPreview(){
 fun RegistrationAcessDataPreview(){
     LocalwebTheme {
         RegistrationAcessDataScreen()
+    }
+}
+
+@Preview(showSystemUi = true, showBackground= true)
+@Composable
+fun WelcomePreview(){
+    LocalwebTheme {
+        WelcomeScreen()
     }
 }
