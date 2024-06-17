@@ -11,8 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.fiap.localweb.screens.LoginScreen
+import br.com.fiap.localweb.screens.RegistrationAcessDataScreen
 import br.com.fiap.localweb.screens.SecondWalkthroughScreen
 import br.com.fiap.localweb.screens.WalkthroughScreen
+import br.com.fiap.localweb.screens.WelcomeScreen
 import br.com.fiap.localweb.ui.theme.LocalwebTheme
 
 class MainActivity : ComponentActivity() {
@@ -59,5 +61,21 @@ fun LoginScreenPreview() {
 fun PersonalDataRegistrationPreview(){
     LocalwebTheme {
         PersonalDataRegistrationScreen()
+    }
+}
+
+@Preview(showSystemUi=true, showBackground=true)
+@Composable
+fun RegistrationAcessDataPreview(){
+    LocalwebTheme {
+        RegistrationAcessDataScreen()
+    }
+}
+
+@Preview(showSystemUi = true, showBackground= true)
+@Composable
+fun WelcomePreview(){
+    LocalwebTheme {
+        WelcomeScreen()
     }
 }

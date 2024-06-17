@@ -31,9 +31,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.localweb.R
 
-
 @Composable
-fun WalkthroughScreen() {
+fun WelcomeScreen(){
     Box(
         modifier = Modifier.fillMaxSize()
     ){
@@ -45,14 +44,10 @@ fun WalkthroughScreen() {
                 .height(400.dp)
         ){
             Image(
-                painterResource(id= R.drawable.walkthrough),
+                painterResource(id= R.drawable.welcomeimage),
                 contentDescription = "image of a message icon",
                 modifier = Modifier
-                    .size(width = 500.dp, height = 700.dp)
-            )
-            Text(
-                text="Pular",
-                textAlign = TextAlign.End
+                    .size(width = 500.dp, height = 900.dp)
             )
         }
 
@@ -76,24 +71,19 @@ fun WalkthroughScreen() {
                     )
                 ){
                     Text(
-                        text="Bem vindo(a) ao Locamail!",
-                        textAlign = TextAlign.Center,
+                        text="Bem vindo Eli",
+                        textAlign = TextAlign.Start,
                         modifier = Modifier.fillMaxWidth(),
                         fontWeight = FontWeight.Bold,
-                        color = colorResource(id = R.color.blue),
+                        color = colorResource(id = R.color.black),
                         fontSize = 20.sp
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
-
-                        text="Nossa aplicação ajuda você a controlar seus e-mails\n" +
-                                " de uma forma simples com filtros e categorias\n" +
-                                " para você administrar seus eventos com maestria",
-
-                        text="O app de e-mail que revoluciona sua caixa de entrada!\n" +
-                                "Simplifique a gestão dos seus e-mails com nossa\n" +
-                                "interface intuitiva e funcionalidades avançadas.",
-
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing\n" +
+                                "elit, sed do eiusmod tempor incididunt ut labore et\n" +
+                                "dolore magna aliqua. Ut enim ad minim veniam, \n" +
+                                "quis nostrud exercitation ullamco",
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         color = colorResource(id = R.color.black),
@@ -106,20 +96,12 @@ fun WalkthroughScreen() {
                     modifier = Modifier
                         .fillMaxWidth()
                 ){
-                    Image(
-                        painterResource(id= R.drawable.first),
-                        contentDescription = "página atual",
-                        modifier = Modifier
-                            .size(width = 20.dp, height = 20.dp)
-
-                    )
-                    Spacer(modifier = Modifier)
                     Button(onClick = { /*TODO*/ },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.red)
                         )){
                         Text(
-                            text = "➔")
+                            text = "Vamos começar!")
                     }
                 }
             }

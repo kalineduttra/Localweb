@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -72,11 +73,26 @@ fun SecondWalkthroughScreen() {
                     )
                 ){
 
+                    Text(
+                        text="Simplifique sua Rotina com \nnosso calendario",
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth(),
+                        fontWeight = FontWeight.Bold,
+                        color = colorResource(id = R.color.blue),
+                        fontSize = 20.sp
+                    )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
+
                         text="Nosso maior diferencial é nossa integração \n" +
                                 "com seu calendário, conseguimos deixar ele bem \n" +
                                 "organizado com base nas marcações dos seus e-mails\n",
+
+                        text="Conheça o calendário do Locaweb, projetado para\n"+"" +
+                                "organizar sua rotina de maneira eficiente. Gerencie seus\n" +
+                                "compromissos de forma intuitiva e prática, tudo em um\n"+
+                                "só lugar. Simplifique sua agenda com o Locaweb!",
+
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         color = colorResource(id = R.color.black),
@@ -85,7 +101,7 @@ fun SecondWalkthroughScreen() {
                 }
 
                 //organizar componentes dentro  da row
-                Spacer(modifier = Modifier.height(200.dp))
+                Spacer(modifier = Modifier.height(180.dp))
                 Row(horizontalArrangement = Arrangement.SpaceAround,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -109,11 +125,12 @@ fun SecondWalkthroughScreen() {
                         )
                     }
 
-                    Button(onClick = { /*TODO*/ },
+                    Button(
+                        onClick = { /*TODO*/ },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.red)
-
-                        )){
+                        )
+                    ){
                         Text(
                             text = "Continuar")
 
