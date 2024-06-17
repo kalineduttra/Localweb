@@ -83,10 +83,16 @@ fun SecondWalkthroughScreen() {
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
+
+                        text="Nosso maior diferencial é nossa integração \n" +
+                                "com seu calendário, conseguimos deixar ele bem \n" +
+                                "organizado com base nas marcações dos seus e-mails\n",
+
                         text="Conheça o calendário do Locaweb, projetado para\n"+"" +
                                 "organizar sua rotina de maneira eficiente. Gerencie seus\n" +
                                 "compromissos de forma intuitiva e prática, tudo em um\n"+
                                 "só lugar. Simplifique sua agenda com o Locaweb!",
+
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         color = colorResource(id = R.color.black),
