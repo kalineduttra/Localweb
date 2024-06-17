@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material3.Button
@@ -33,7 +34,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,11 +51,17 @@ fun LoginScreen() {
     var password by remember {
         mutableStateOf("")
     }
+    var emailError by remember {
+        mutableStateOf(false)
+    }
+    var passwordSize = 8
+
+
 
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        //descrição
+        // Descrition
         Column(
             modifier = Modifier
                 .padding(100.dp)
@@ -78,7 +88,7 @@ fun LoginScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            //--- Email
+            // User Email
             Text(
                 text = "Email",
                 textAlign = TextAlign.Start,
@@ -88,14 +98,33 @@ fun LoginScreen() {
             )
 
             OutlinedTextField(
-                value = "",
-                onValueChange = {},
+                value = email,
+                onValueChange = {
+                    email = it
+                    if (email.length > 0) emailError = false
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
+                label = {
+                Text(text = stringResource(id = R.string.email))
+                },
+                isError = emailError,
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Email
+                ),
             )
+                /*if(emailError){
+                   Text(
+                      text = "Email é obrigatório",
+                      modififer = Modifier
+                          .fillMaxWidth(),
+                      color = Color.Red,
+                      textAlign = TextAlign.End
+                  )
+              }*/
 
-            // --- Password
+            // User Password
             Spacer(modifier = Modifier.height(2.dp))
             Text(
                 text = "Senha",
@@ -105,14 +134,18 @@ fun LoginScreen() {
                 fontSize = 15.sp
             )
             OutlinedTextField(
-                value = "",
-                onValueChange = {},
+                value = password,
+                onValueChange = {
+                    if (it.length <= passwordSize)
+                        password = it
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
+                visualTransformation = PasswordVisualTransformation()
             )
 
-            //Botão de fazer login
+            // Button Login
             Spacer(modifier = Modifier.height(20.dp))
             Row(
                 horizontalArrangement = Arrangement.SpaceAround,
@@ -132,7 +165,6 @@ fun LoginScreen() {
                 }
             }
 
-                //Spacer(modifier = Modifier.height(50.dp))
                 Column(
                     modifier = Modifier.padding(
                         vertical = 16.dp,
