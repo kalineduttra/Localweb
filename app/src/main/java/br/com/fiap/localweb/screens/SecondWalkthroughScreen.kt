@@ -74,10 +74,9 @@ fun SecondWalkthroughScreen() {
 
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing\n" +
-                                "elit, sed do eiusmod tempor incididunt ut labore et\n" +
-                                "dolore magna aliqua. Ut enim ad minim veniam, \n" +
-                                "quis nostrud exercitation ullamco",
+                        text="Nosso maior diferencial é nossa integração \n" +
+                                "com seu calendário, conseguimos deixar ele bem \n" +
+                                "organizado com base nas marcações dos seus e-mails\n",
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         color = colorResource(id = R.color.black),

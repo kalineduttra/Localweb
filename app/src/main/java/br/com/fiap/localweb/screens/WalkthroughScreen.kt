@@ -76,7 +76,7 @@ fun WalkthroughScreen() {
                     )
                 ){
                     Text(
-                        text="Bem vindo(a) ao Locamail",
+                        text="Bem vindo(a) ao Locamail!",
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         fontWeight = FontWeight.Bold,
@@ -85,10 +85,9 @@ fun WalkthroughScreen() {
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing\n" +
-                                "elit, sed do eiusmod tempor incididunt ut labore et\n" +
-                                "dolore magna aliqua. Ut enim ad minim veniam, \n" +
-                                "quis nostrud exercitation ullamco",
+                        text="Nossa aplicação ajuda você a controlar seus e-mails\n" +
+                                " de uma forma simples com filtros e categorias\n" +
+                                " para você administrar seus eventos com maestria",
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         color = colorResource(id = R.color.black),

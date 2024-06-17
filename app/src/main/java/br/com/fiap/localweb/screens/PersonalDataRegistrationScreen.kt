@@ -64,8 +64,7 @@ fun PersonalDataRegistrationScreen() {
                 fontSize = 20.sp
             )
             Text(
-                text="Preencha os campos abaixo para criar \n" +
-                        "a sua conta no Locamail",
+                text="Preencha os campos abaixo para criar sua conta\n",
                 color = colorResource(id = R.color.gray),
                 fontSize = 12.sp
             )
@@ -87,6 +86,7 @@ fun PersonalDataRegistrationScreen() {
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
             )
+
             Spacer(modifier = Modifier.height(2.dp))
             Text(
                 text = "Data de nascimento:",
