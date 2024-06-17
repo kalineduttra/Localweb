@@ -151,10 +151,8 @@ fun RegistrationAcessDataScreen() {
                 fontSize = 13.sp
             )
 
-
-
-
-            Spacer(modifier = Modifier.height(40.dp))
+            
+            Spacer(modifier = Modifier.height(70.dp))
             Row(
                 horizontalArrangement = Arrangement.SpaceAround,
                 modifier = Modifier
@@ -165,7 +163,6 @@ fun RegistrationAcessDataScreen() {
                     contentDescription = "página atual",
                     modifier = Modifier
                         .size(width = 20.dp, height = 20.dp)
-
                 )
                 Button(onClick = { /*TODO*/ },
                     colors = ButtonDefaults.buttonColors(
