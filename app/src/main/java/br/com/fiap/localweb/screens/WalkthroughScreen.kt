@@ -76,7 +76,7 @@ fun WalkthroughScreen() {
                     )
                 ){
                     Text(
-                        text="Bem vindo(a) ao Locamail!",
+                        text="Bem vindo(a) ${nome} ao Locamail!",
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         fontWeight = FontWeight.Bold,
