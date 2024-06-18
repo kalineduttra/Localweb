@@ -27,12 +27,14 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import br.com.fiap.localweb.R
 
 @Composable
-fun WelcomeScreen(){
+fun WelcomeScreen(navController: NavHostController) {
     Box(
         modifier = Modifier.fillMaxSize()
     ){
@@ -96,7 +98,7 @@ fun WelcomeScreen(){
                     modifier = Modifier
                         .fillMaxWidth()
                 ){
-                    Button(onClick = { /*TODO*/ },
+                    Button(onClick = {     navController.navigate("home") },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.red)
                         )){
@@ -108,3 +110,9 @@ fun WelcomeScreen(){
         }
     }
 }
+
+//@Preview(widthDp = 360, heightDp = 640)
+//@Composable
+//private fun LerEmailPreview() {
+//    WelcomeScreen(navController)
+//}

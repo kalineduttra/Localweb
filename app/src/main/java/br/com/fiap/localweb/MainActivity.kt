@@ -7,12 +7,17 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+
+import androidx.navigation.compose.rememberNavController
+import br.com.fiap.localweb.screens.EscreverEmail
+import br.com.fiap.localweb.screens.LerEmail
 import br.com.fiap.localweb.screens.LoginScreen
 import br.com.fiap.localweb.screens.RegistrationAcessDataScreen
 import br.com.fiap.localweb.screens.SecondWalkthroughScreen
+import br.com.fiap.localweb.screens.TInicial2
 import br.com.fiap.localweb.screens.WalkthroughScreen
 import br.com.fiap.localweb.screens.WelcomeScreen
 import br.com.fiap.localweb.ui.theme.LocalwebTheme
@@ -23,59 +28,56 @@ class MainActivity : ComponentActivity() {
         setContent {
             LocalwebTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    WalkthroughScreen()
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                }
+
+                val navController = rememberNavController()
+                NavHost(
+                    navController = navController,
+                    startDestination = "inicio"
+                ) {
+                    composable(route = "inicio") {
+                        WalkthroughScreen(navController)
+                    }
+
+                    composable(route = "segunda") {
+                        SecondWalkthroughScreen(navController)
+                    }
+
+                    composable(route = "login") {
+                        LoginScreen(navController)
+                    }
+
+                    composable(route = "cadastro1") {
+                        PersonalDataRegistrationScreen(navController)
+                    }
+
+                    composable(route = "cadastro2") {
+                        RegistrationAcessDataScreen(navController)
+                    }
+
+                    composable(route = "welcome") {
+                        WelcomeScreen(navController)
+                    }
+
+                    composable(route = "home") {
+                        TInicial2(navController)
+                    }
+
+                    composable(route = "ler") {
+                        LerEmail(navController)
+                    }
+
+                    composable(route = "escrever") {
+                        EscreverEmail(navController)
+                    }
+
+
                 }
             }
         }
-    }
-}
+    }}
 
-
-@Preview(showSystemUi = true, showBackground = true)
-@Composable
-fun WalkthroughScreenPreview() {
-    LocalwebTheme {
-        WalkthroughScreen()
-    }
-}
-
-@Preview(showSystemUi = true, showBackground = true)
-@Composable
-fun SecondWalkthroughScreenPreview() {
-    LocalwebTheme {
-        SecondWalkthroughScreen()
-    }
-}
-
-@Preview(showSystemUi = true, showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    LocalwebTheme {
-        LoginScreen()
-    }
-}
-
-@Preview(showSystemUi=true, showBackground = true)
-@Composable
-fun PersonalDataRegistrationPreview(){
-    LocalwebTheme {
-        PersonalDataRegistrationScreen()
-    }
-}
-
-@Preview(showSystemUi=true, showBackground=true)
-@Composable
-fun RegistrationAcessDataPreview(){
-    LocalwebTheme {
-        RegistrationAcessDataScreen()
-    }
-}
-
-@Preview(showSystemUi = true, showBackground= true)
-@Composable
-fun WelcomePreview(){
-    LocalwebTheme {
-        WelcomeScreen()
-    }
-}

@@ -19,6 +19,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
+
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,14 +28,16 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import br.com.fiap.localweb.R
 
 
 // segunda tela walkthrough
 @Composable
-fun SecondWalkthroughScreen() {
+fun SecondWalkthroughScreen(navController: NavHostController) {
     Box(
         modifier = Modifier.fillMaxSize()
     ){
@@ -88,6 +91,14 @@ fun SecondWalkthroughScreen() {
                                 "com seu calendário, conseguimos deixar ele bem \n" +
                                 "organizado com base nas marcações dos seus e-mails\n",
 
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth(),
+                        color = colorResource(id = R.color.black),
+                        fontSize = 12.sp
+                    )
+
+                    Text(
+
                         text="Conheça o calendário do Locaweb, projetado para\n"+"" +
                                 "organizar sua rotina de maneira eficiente. Gerencie seus\n" +
                                 "compromissos de forma intuitiva e prática, tudo em um\n"+
@@ -112,7 +123,7 @@ fun SecondWalkthroughScreen() {
                         modifier = Modifier
                             .size(width = 20.dp, height = 20.dp)
                     )
-                    Button(onClick = { /*TODO*/ },
+                    Button(onClick = { navController.navigate("inicio") },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.white)
 
@@ -126,7 +137,7 @@ fun SecondWalkthroughScreen() {
                     }
 
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = {    navController.navigate("login") },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.red)
                         )
@@ -140,3 +151,9 @@ fun SecondWalkthroughScreen() {
         }
     }
 }
+
+//@Preview(widthDp = 360, heightDp = 640)
+//@Composable
+//private fun RegistrationAcessDataScreenPreview() {
+//    RegistrationAcessDataScreen(navController)
+//}

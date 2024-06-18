@@ -1,5 +1,11 @@
 package br.com.fiap.localweb.database.dao
 
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Update
+import br.com.fiap.localweb.model.Email
+
 @Dao
 interface EmailDao {
     @Insert

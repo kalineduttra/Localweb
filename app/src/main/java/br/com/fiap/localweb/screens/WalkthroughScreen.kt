@@ -27,31 +27,37 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import br.com.fiap.localweb.R
 
 
 @Composable
-fun WalkthroughScreen() {
+fun WalkthroughScreen(navController: NavHostController) {
+
+    var nome = "Maria Silva"
+
+
     Box(
         modifier = Modifier.fillMaxSize()
-    ){
+    ) {
         // header
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(400.dp)
-        ){
+        ) {
             Image(
-                painterResource(id= R.drawable.walkthrough),
+                painterResource(id = R.drawable.walkthrough),
                 contentDescription = "image of a message icon",
                 modifier = Modifier
                     .size(width = 500.dp, height = 700.dp)
             )
             Text(
-                text="Pular",
+                text = "Pular",
                 textAlign = TextAlign.End
             )
         }
@@ -60,23 +66,23 @@ fun WalkthroughScreen() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-        ){
+        ) {
             Card(
                 modifier = Modifier
                     .height(600.dp)
                     .width(600.dp)
                     .offset(y = (360).dp),
                 colors = CardDefaults.cardColors(containerColor = Color.White),
-                shape = RoundedCornerShape(topEnd =50.dp, topStart = 50.dp)
-            ){
+                shape = RoundedCornerShape(topEnd = 50.dp, topStart = 50.dp)
+            ) {
                 Column(
                     modifier = Modifier.padding(
                         vertical = 16.dp,
                         horizontal = 32.dp
                     )
-                ){
+                ) {
                     Text(
-                        text="Bem vindo(a) ${nome} ao Locamail!",
+                        text = "Bem vindo(a) ${nome} ao Locamail!",
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth(),
                         fontWeight = FontWeight.Bold,
@@ -86,11 +92,19 @@ fun WalkthroughScreen() {
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
 
-                        text="Nossa aplicação ajuda você a controlar seus e-mails\n" +
+                        text = "Nossa aplicação ajuda você a controlar seus e-mails\n" +
                                 " de uma forma simples com filtros e categorias\n" +
                                 " para você administrar seus eventos com maestria",
 
-                        text="O app de e-mail que revoluciona sua caixa de entrada!\n" +
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth(),
+                        color = colorResource(id = R.color.black),
+                        fontSize = 12.sp
+                    )
+
+                    Text(
+
+                        text = "O app de e-mail que revoluciona sua caixa de entrada!\n" +
                                 "Simplifique a gestão dos seus e-mails com nossa\n" +
                                 "interface intuitiva e funcionalidades avançadas.",
 
@@ -102,27 +116,36 @@ fun WalkthroughScreen() {
                 }
 
                 Spacer(modifier = Modifier.height(200.dp))
-                Row(horizontalArrangement = Arrangement.SpaceAround,
+                Row(
+                    horizontalArrangement = Arrangement.SpaceAround,
                     modifier = Modifier
                         .fillMaxWidth()
-                ){
+                ) {
                     Image(
-                        painterResource(id= R.drawable.first),
+                        painterResource(id = R.drawable.first),
                         contentDescription = "página atual",
                         modifier = Modifier
                             .size(width = 20.dp, height = 20.dp)
 
                     )
                     Spacer(modifier = Modifier)
-                    Button(onClick = { /*TODO*/ },
+                    Button(
+                        onClick = { navController.navigate("segunda")},
                         colors = ButtonDefaults.buttonColors(
                             containerColor = colorResource(id = R.color.red)
-                        )){
+                        )
+                    ) {
                         Text(
-                            text = "➔")
+                            text = "➔"
+                        )
                     }
                 }
             }
         }
     }
 }
+//@Preview(widthDp = 360, heightDp = 640)
+//@Composable
+//private fun InicialPreview() {
+//    WalkthroughScreen()
+//}

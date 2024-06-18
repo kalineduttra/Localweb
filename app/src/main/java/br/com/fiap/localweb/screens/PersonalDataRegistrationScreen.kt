@@ -23,12 +23,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import br.com.fiap.localweb.R
 
 @Composable
-fun PersonalDataRegistrationScreen() {
+fun PersonalDataRegistrationScreen(navController: NavHostController) {
     Box(
         modifier = Modifier.fillMaxSize()
     ){
@@ -36,7 +38,7 @@ fun PersonalDataRegistrationScreen() {
             horizontalArrangement = Arrangement.SpaceAround,
         ){
 
-            Button(onClick = { /*TODO*/ },
+            Button(onClick = {     navController.navigate("login") },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colorResource(id = R.color.white),
                 )) {
@@ -115,7 +117,7 @@ fun PersonalDataRegistrationScreen() {
                         .size(width = 20.dp, height = 20.dp)
                 )
                 Spacer(modifier = Modifier)
-                Button(onClick = { /*TODO*/ },
+                Button(onClick = { navController.navigate("cadastro2") },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = colorResource(id = R.color.red)
                     )){
@@ -126,3 +128,9 @@ fun PersonalDataRegistrationScreen() {
         }
     }
 }
+
+//@Preview(widthDp = 360, heightDp = 640)
+//@Composable
+//private fun PersonalPreview() {
+//    PersonalDataRegistrationScreen(cadastro1)
+//}

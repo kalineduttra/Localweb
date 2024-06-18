@@ -1,5 +1,6 @@
 package br.com.fiap.localweb.screens
 
+import android.view.Menu
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -589,7 +590,7 @@ fun Menu(modifier: Modifier = Modifier) {
     }
 }
 
-//@Preview()
+//@Preview(widthDp = 360, heightDp = 640)
 //@Composable
 //private fun MenuPreview() {
 //    Menu(Modifier)
